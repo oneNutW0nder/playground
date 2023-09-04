@@ -183,8 +183,6 @@ void test_append() {
 
 }
 
-// Basic test to append a new node to the end of an existing list
-void append_test() {}
 
 int main(int argc, char *argv[]) {
   test_simple();
