@@ -56,17 +56,17 @@ void destroy_list(Entry *list) {
   }
 
   // 'victim' will be the currently selected node
-  Node* victim = list->next;
+  Node *victim = list->next;
 
   // Now that we have entered the 'list', we can free it
   list->next = NULL;
   free(list);
 
   // Traverse and free along the way
-  while (victim->next != NULL){
+  while (victim->next != NULL) {
     // Use 'tmp' to cleanup current node and walk 'victim' forward
-    Node* tmp = victim;
-    victim = victim->next;    
+    Node *tmp = victim;
+    victim = victim->next;
 
     // Free 'data' and set pointer to NULL then free the 'Node'
     // free(tmp->data);
@@ -80,7 +80,6 @@ void destroy_list(Entry *list) {
   victim->next = NULL;
   victim->data = NULL;
   free(victim);
-
 }
 
 // Create a new node containing 'data' and return the pointer to it
@@ -159,20 +158,19 @@ void test_append() {
   printf("============================\n");
   printf("[+] Appending from an 'Entry'...\n");
 
-  Entry* list_one = make_simple_list();
-  Node* new_one = make_new_node("I am the new node!");
-  append((Node*)list_one, new_one);
+  Entry *list_one = make_simple_list();
+  Node *new_one = make_new_node("I am the new node!");
+  append((Node *)list_one, new_one);
 
   print_list(list_one);
   destroy_list(list_one);
   printf("[+] Appending from an 'Entry' complete!\n");
   printf("============================\n");
 
-
   printf("============================\n");
   printf("[+] Appending to list with starting point in the middle...\n");
-  Entry* list_two = make_simple_list();
-  Node* new_two = make_new_node("I am the new node!");
+  Entry *list_two = make_simple_list();
+  Node *new_two = make_new_node("I am the new node!");
   append(list_two->next->next, new_two);
 
   print_list(list_two);
@@ -180,9 +178,7 @@ void test_append() {
 
   printf("[+] Appending from starting point in the middle complete!\n");
   printf("============================\n");
-
 }
-
 
 int main(int argc, char *argv[]) {
   test_simple();
