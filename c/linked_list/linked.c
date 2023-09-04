@@ -46,6 +46,7 @@ void append(Node *node, Node *victim) {
 //
 // @parma list -> The 'Entry' for a given list that needs to be destoryed
 void destroy_list(Entry *list) {
+  // TODO: Need to handle the case of the user supplying "malloc()" data
   if (!list) {
     printf("[+] Nothing to cleanup!");
     return;
